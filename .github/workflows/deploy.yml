@@ -6,10 +6,12 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write  # 允许这个 workflow 往仓库推代码
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
