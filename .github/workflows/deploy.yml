@@ -14,20 +14,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 1. 装 PHP / Composer
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
           tools: composer
 
-      - name: Install dependencies
+      - name: Install PHP dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
+      # 2. 装 Node / 跑 Vite 构建
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # 或者改成你本地用的版本，比如 20
+
+      - name: Install Node dependencies
+        run: npm ci   # 如果你没用 package-lock.json，就用 `npm install`
+
+      - name: Build assets with Vite
+        run: npm run build
+
+      # 3. 跑 Jigsaw 构建
       - name: Build Jigsaw site
         run: |
           vendor/bin/jigsaw build production
 
-      # 把 build_production 当作网站根目录
+      # 4. 部署到 gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
