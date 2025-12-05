@@ -1,6 +1,26 @@
 @extends('_layouts.main')
 
 @section('body')
+@php
+    $parsePostDate = function ($page) {
+        if (! $page || ! $page->date) {
+            return null;
+        }
+
+        if ($page->date instanceof \DateTimeInterface) {
+            return $page->date;
+        }
+
+        if (is_numeric($page->date)) {
+            return (new \DateTime('@' . intval($page->date)))->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+        }
+
+        return new \DateTime($page->date);
+    };
+
+    $latestPost = $posts->first();
+    $latestPostDate = $parsePostDate($latestPost);
+@endphp
 <div class="min-h-screen bg-slate-50">
     <header class="bg-white border-b border-slate-200">
         <div class="mx-auto max-w-4xl px-6 py-12">
@@ -15,7 +35,7 @@
                 </div>
                 <span>最近更新：
                     @if ($posts->count() > 0)
-                        {{ $posts->first()->getDate()->format('Y 年 n 月 j 日') }}
+                        {{ $latestPostDate?->format('Y 年 n 月 j 日') }}
                     @else
                         尚无文章
                     @endif
@@ -40,9 +60,14 @@
         @else
             <div class="grid gap-6">
                 @foreach ($posts as $post)
+                    @php
+                        $postDate = $parsePostDate($post);
+                    @endphp
                     <a href="{{ $post->getUrl() }}" class="group block rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                         <div class="flex items-center gap-3 text-sm text-slate-500">
-                            <time datetime="{{ $post->getDate()->format('Y-m-d') }}">{{ $post->getDate()->format('Y 年 n 月 j 日') }}</time>
+                            @if ($postDate)
+                                <time datetime="{{ $postDate->format('Y-m-d') }}">{{ $postDate->format('Y 年 n 月 j 日') }}</time>
+                            @endif
                             <span aria-hidden="true">·</span>
                             <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">{{ $post->author ?? 'MoMoYu' }}</span>
                         </div>
