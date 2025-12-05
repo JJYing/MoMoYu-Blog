@@ -21,9 +21,7 @@
                         {{ $page->author ?? 'MoMoYu' }}
                     </span>
                     <span aria-hidden="true">·</span>
-                    @if ($page->date)
-                        <time datetime="{{ $page->getDate()->format('Y-m-d') }}">{{ $page->getDate()->format('Y 年 n 月 j 日') }}</time>
-                    @endif
+                    <time datetime="{{ $date->format('Y-m-d') }}">{{ $date->format('Y 年 n 月 j 日') }}</time>
                 </div>
 
                 <h1 class="text-3xl font-semibold leading-tight text-slate-900">{{ $page->title }}</h1>
