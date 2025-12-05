@@ -22,8 +22,18 @@
                     </span>
                     <span aria-hidden="true">·</span>
                     @if ($page->date)
-                        <time datetime="{{ (new \DateTime($page->date))->format('Y-m-d') }}">
-                            {{ (new \DateTime($page->date))->format('Y 年 n 月 j 日') }}
+                        @php
+                            if ($page->date instanceof \DateTimeInterface) {
+                                $postDate = $page->date;
+                            } elseif (is_numeric($page->date)) {
+                                $postDate = (new \DateTime('@' . intval($page->date)))->setTimezone(new \DateTimeZone(date_default_timezone_get()));
+                            } else {
+                                $postDate = new \DateTime($page->date);
+                            }
+                        @endphp
+
+                        <time datetime="{{ $postDate->format('Y-m-d') }}">
+                            {{ $postDate->format('Y 年 n 月 j 日') }}
                         </time>
                     @endif
                 </div>
