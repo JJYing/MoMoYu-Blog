@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
         <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
     </head>
-    <body class="text-gray-900 font-sans antialiased">
+    <body class="bg-slate-50 text-gray-900 font-sans antialiased">
         @yield('body')
     </body>
 </html>
