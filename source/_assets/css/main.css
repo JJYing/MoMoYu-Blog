@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+body {
+    font-family: "AliHealth2", sans-serif;
+}
 .article-content h1,
 .article-content h2,
 .article-content h3,
