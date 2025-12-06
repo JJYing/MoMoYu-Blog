@@ -13,7 +13,7 @@
         
         <title>{{ $page->title }}</title>
         @viteRefresh()
-        <link rel="stylesheet" href="{{ vite('source/_assets/css/main.css') }}">
+        <link rel="stylesheet" href="{{ vite('source/_assets/css/blog.css') }}">
         <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
         <script>
             var _paq = window._paq = window._paq || [];
@@ -30,7 +30,7 @@
             })();
           </script>        
     </head>
-    <body class="bg-slate-50 text-gray-900 font-sans antialiased">
+    <body>
         @yield('body')
     </body>
 </html>
