@@ -3,13 +3,12 @@
 @section('body')
 <div class="dashboard">
     <div class="inner blog-inner">
-        <header class="nav blog-nav">
-            <div class="blog-nav-left">
-                <p class="blog-site-title">MoMoYu Blog</p>
-                <a href="/" style="text-decoration: none;">
-                    <h1 class="blog-page-title" style="margin: 0;">摸摸鱼研究局</h1>
-                </a>
-            </div>
+        <header class="nav blog-nav blog-nav-post">
+            <img src="/assets/images/blog-logo.avif" alt="MoMoYu Blog Logo" class="nav-bg">
+            <p class="blog-site-title">MoMoYu Blog</p>
+            <a href="/" class="blog-page-title-link">
+                <h1 class="blog-page-title">摸摸鱼研究局</h1>
+            </a>
             <a href="/" class="blog-nav-all-posts">回到首页</a>
         </header>
 
@@ -18,7 +17,6 @@
                 <div class="article-header">
                     <div class="article-meta">
                         <span class="article-author">
-                            <span class="author-dot"></span>
                             {{ $page->author ?? 'MoMoYu' }}
                         </span>
                         <span aria-hidden="true">·</span>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="canonical" href="{{ $page->getUrl() }}">
         <meta name="description" content="{{ $page->description }}">
+        <meta name="view-transition" content="same-origin" />
         <link rel="preconnect" href="https://s.anyway.red" crossorigin/>
         <link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
         <link rel="stylesheet" href="https://s.anyway.red/momoyu/fontawesome.css">

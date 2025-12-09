@@ -23,14 +23,12 @@
 @endphp
 <div class="dashboard">
     <div class="inner blog-inner">
-        <header class="blog-header">
+        <header class="nav blog-nav blog-nav-index">
             <p class="blog-site-title">MoMoYu Blog</p>
-            <h1 class="blog-page-title">{{ $page->title }}</h1>
+            <a href="/" class="blog-page-title-link">
+                <h1 class="blog-page-title">{{ $page->title }}</h1>
+            </a>
             <p class="blog-description">{{ $page->description }}</p>
-
-            <div class="blog-header-links">
-
-            </div>
         </header>
 
         <main>
