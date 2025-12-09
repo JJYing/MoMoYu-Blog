@@ -1,7 +1,7 @@
 @extends('_layouts.main')
 
 @section('body')
-<div class="dashboard">
+<div class="blog-wrapper">
     <div class="inner blog-inner">
         <header class="nav blog-nav blog-nav-post">
             <img src="/assets/images/blog-logo.avif" alt="MoMoYu Blog Logo" class="nav-bg">

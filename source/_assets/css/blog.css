@@ -155,11 +155,12 @@ a {
   }
 }
 
-.dashboard {
+.blog-wrapper {
   min-height: 100vh;
+  margin: var(--margin);
 }
 
-.dashboard > .inner {
+.blog-wrapper > .inner {
   max-width: 1200px;
   margin: 0 auto;
   gap: var(--margin);
@@ -587,7 +588,7 @@ a {
     display: none;
   }
 
-  .dashboard > .inner {
+  .blog-wrapper > .inner {
     display: flex;
     flex-direction: column;
     gap: var(--margin);
@@ -897,10 +898,10 @@ a {
 
 .article-content blockquote {
   border-left: 4px solid var(--text5);
-  padding-left: 1em;
+  padding: .1em .5em .1em 1em;
   color: var(--text3);
   margin: 1.5em 0;
-  background: var(--bg2);
+  background: var(--text6);
 }
 
 .article-content pre {
@@ -929,9 +930,9 @@ a {
 
 .blog-inner {
   display: block !important;
-  /* Override .dashboard > .inner grid */
+  /* Override .blog-wrapper > .inner grid */
   max-width: 900px !important;
-  /* Override .dashboard > .inner max-width */
+  /* Override .blog-wrapper > .inner max-width */
 }
 
 .blog-header-links {
@@ -1012,20 +1013,24 @@ a {
   background-size: cover;
   overflow: hidden;
   position: relative;
+}
 
-  & .nav-bg {
-    position: absolute;
-    top: -2rem;
-    left: 50%;
-    width: 18rem;
-    height: 18rem;
-    object-fit: contain;
-    z-index: 0;
-  }
+.nav-bg {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  width: 18rem;
+  height: 18rem;
+  object-fit: contain;
+  z-index: 0;
+  view-transition-name: nav-bg;
+}
+.index-nav-bg {
+  /* top: -4rem; */
+  left:60%;
 }
 
 /* Grid Areas */
-.nav-logo-link { grid-area: logo; }
 .blog-site-title { grid-area: site-title; }
 .blog-page-title-link { grid-area: blog-title; }
 .blog-description { grid-area: desc; }
@@ -1034,10 +1039,11 @@ a {
 /* Index Header Layout */
 .blog-nav-index {
   grid-template-areas:
-    "site-title ."
-    "blog-title ."
-    "desc desc";
-  grid-template-columns: max-content 1fr;
+    "site-title"
+    "blog-title"
+    "desc";
+  /* grid-template-columns: max-content 30%; */
+  padding-right: 45%;
 }
 
 /* Post Header Layout */
@@ -1078,7 +1084,7 @@ a {
 }
 
 .blog-description {
-  font-size: 1.2em;
+  font-size: 1em;
   color: var(--text3);
   margin-top: 0.5rem;
 }

@@ -21,9 +21,10 @@
     $latestPost = $posts->first();
     $latestPostDate = $parsePostDate($latestPost);
 @endphp
-<div class="dashboard">
+<div class="blog-wrapper">
     <div class="inner blog-inner">
         <header class="nav blog-nav blog-nav-index">
+            <img src="/assets/images/blog-logo.avif" alt="MoMoYu Blog Logo" class="nav-bg index-nav-bg">
             <p class="blog-site-title">MoMoYu Blog</p>
             <a href="/" class="blog-page-title-link">
                 <h1 class="blog-page-title">{{ $page->title }}</h1>
