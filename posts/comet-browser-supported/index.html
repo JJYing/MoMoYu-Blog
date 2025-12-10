@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="/posts/comet-browser-supported">
+        <meta name="description" content="摸摸鱼计时器目前已支持 5 种浏览器">
+        <meta name="view-transition" content="same-origin" />
+        <link rel="preconnect" href="https://s.anyway.red" crossorigin/>
+        <link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
+        <link rel="stylesheet" href="https://s.anyway.red/momoyu/fontawesome.css">
+        <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/regular/regular.css">
+        <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/bold/bold.css">
+        
+        <title>支持 Comet 浏览器的网页统计</title>
+                <link rel="stylesheet" href="/assets/build/assets/blog-DcIOYNTz.css">
+        <script defer type="module" src="/assets/build/assets/main-l0sNRNKZ.js"></script>
+        <script>
+            var _paq = window._paq = window._paq || [];
+            _paq.push(["setCookieDomain", "*.momoyu.app"]);
+            _paq.push(["setDomains", ["*.momoyu.app"]]);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="//anyway.fm/matomo/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '5']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+          </script>        
+    </head>
+    <body>
+        <div class="blog-wrapper">
+    <div class="inner blog-inner">
+        <header class="nav blog-nav blog-nav-post">
+            <img src="/assets/images/blog-logo.avif" alt="MoMoYu Blog Logo" class="nav-bg">
+            <p class="blog-site-title">MoMoYu Blog</p>
+            <a href="/" class="blog-page-title-link">
+                <h1 class="blog-page-title">摸摸鱼研究局</h1>
+            </a>
+            <a href="/" class="blog-nav-all-posts">回到首页</a>
+        </header>
+
+        <main>
+            <article class="box article-box">
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-author">
+                            JJ Ying
+                        </span>
+                        <span aria-hidden="true">·</span>
+                                                    
+                            <time datetime="2025-11-18">
+                                2025 年 11 月 18 日
+                            </time>
+                                            </div>
+
+                    <h1 class="article-title">支持 Comet 浏览器的网页统计</h1>
+
+                                            <p class="article-description">摸摸鱼计时器目前已支持 5 种浏览器</p>
+                    
+                                            <div class="post-tags">
+                                                            <span class="post-tag"># 开发</span>
+                                                    </div>
+                                    </div>
+
+                <div class="article-divider"></div>
+
+                <div class="article-content">
+                    <p>目前我们支持网页统计的浏览器已经包括：
+- Chrome
+- Edge
+- Safari
+- OpenAI Atlas
+- Brave</p>
+
+<p>但是很遗憾，目前大家呼声很高的 FireFox 以及 The Browser Company 的两个 Arc 以及 Dia 都支持不了，因为我们现在使用计数方案是利用 macOS 自带的 Automation 里的命令来获取当前 tab 的 URL，但 FireFox 天生不支持相关命令，Chromium 内核的浏览器本来应该都是支持的，但 Arc 以及 Dia 不知为何把整个 Automation 都给去掉了所以也获取不到，暂时没有太好的办法~</p>
+
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+    </body>
+</html>
