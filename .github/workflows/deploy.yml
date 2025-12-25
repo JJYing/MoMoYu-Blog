@@ -1,4 +1,4 @@
-name: Build & Deploy Jigsaw
+name: Build & Deploy Hugo
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 允许这个 workflow 往仓库推代码
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -15,40 +15,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # 1. 装 PHP / Composer
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
-          tools: composer
+          submodules: recursive
+          fetch-depth: 0
 
-      - name: Install PHP dependencies
-        run: composer install --no-interaction --prefer-dist --no-progress
-
-      # 2. 装 Node / 跑 Vite 构建
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          node-version: '22' # 或者改成你本地用的版本，比如 20
+          hugo-version: 'latest'
+          extended: false
 
-      - name: Install Node dependencies
-        run: npm ci   # 如果你没用 package-lock.json，就用 `npm install`
+      - name: Build Hugo site
+        run: hugo --minify
 
-      - name: Build assets with Vite
-        run: npm run build
-
-      # 3. 跑 Jigsaw 构建
-      - name: Build Jigsaw site
-        run: |
-          vendor/bin/jigsaw build production
-
-      # 4. 部署到 gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build_production
+          publish_dir: ./public
           publish_branch: gh-pages
           force_orphan: true
           cname: blog.momoyu.app
