@@ -8,6 +8,7 @@
         <meta name="view-transition" content="same-origin" />
         <link rel="preconnect" href="https://s.anyway.red" crossorigin/>
         <link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
+        
         <link rel="stylesheet" href="https://s.anyway.red/momoyu/fontawesome.css">
         <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/regular/regular.css">
         <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/bold/bold.css">

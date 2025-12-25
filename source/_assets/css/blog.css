@@ -887,7 +887,20 @@ a {
   margin: 1em 0 1em 1.5em;
   padding-left: 1em;
   color: var(--text2);
+  display: block;
+  list-style-position: outside;
 }
+
+.article-content ul li
+.article-content ol li{
+  margin: .25em 0;
+}
+
+.article-content ul li::marker,
+.article-content ol li::marker{
+  color: var(--primary);
+}
+
 
 .article-content ul {
   list-style: disc;
@@ -1149,4 +1162,113 @@ a {
 .article-content {
   padding: calc(var(--margin) * 1.5);
   color: var(--text2);
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Markdown 链接样式 */
+.article-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease;
+}
+
+.article-content a:hover {
+  color: var(--secondary);
+}
+
+/* Markdown 图片样式 */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5em 0;
+  display: block;
+}
+
+/* Markdown 列表项样式 */
+.article-content li {
+  margin: 0.5em 0;
+  line-height: 1.8;
+  display: list-item;
+}
+
+.article-content li > p {
+  margin: 0.5em 0;
+}
+
+.article-content li > ul,
+.article-content li > ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Markdown 强调文本 */
+.article-content strong {
+  font-weight: 700;
+  color: var(--text1);
+}
+
+.article-content em {
+  font-style: italic;
+}
+
+.article-content strong em,
+.article-content em strong {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Markdown 水平分割线 */
+.article-content hr {
+  border: none;
+  border-top: 2px solid var(--bg3);
+  margin: 2em 0;
+}
+
+/* Markdown 表格样式 */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  display: block;
+}
+
+.article-content table thead {
+  background: var(--bg2);
+}
+
+.article-content table th,
+.article-content table td {
+  padding: 0.75em 1em;
+  border: 1px solid var(--bg3);
+  text-align: left;
+}
+
+.article-content table th {
+  font-weight: 600;
+  color: var(--text1);
+}
+
+.article-content table tbody tr:nth-child(even) {
+  background: var(--bg1);
+}
+
+/* Markdown 代码块内的样式 */
+.article-content pre {
+  line-height: 1.6;
+}
+
+.article-content pre code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+/* Markdown 内联代码在段落中的样式 */
+.article-content p code,
+.article-content li code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
 }
