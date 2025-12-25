@@ -1147,7 +1147,7 @@ main{
 /* 在线用户统计页面样式 */
 .online-users-stats {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: calc(var(--margin) * 1.5);
 }
 
@@ -1157,14 +1157,16 @@ main{
   gap: 0.5rem;
   padding: calc(var(--margin) * 1.5);
   background: var(--bg1);
-  border-radius: var(--box-radius);
-  border: 1px solid var(--bg2);
+  border-radius: calc(var(--box-radius) * .5);
+  flex: 1 1 auto;
+  align-items: center;
+  /* border: 1px solid var(--bg2); */
 }
 
 .stats-label {
   font-size: 0.9em;
   color: var(--text3);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .stats-value {
