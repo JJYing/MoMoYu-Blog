@@ -614,85 +614,6 @@ a {
   display: block;
 }
 
-@media (max-width: 900px) {
-  .mobile-hide {
-    display: none;
-  }
-
-  .blog-wrapper > .inner {
-    display: flex;
-    flex-direction: column;
-    gap: var(--margin);
-  }
-
-  .nav {
-    font-size: .75rem;
-  }
-
-  .nav-right {
-    min-width: unset;
-  }
-
-  .nav-center {
-    gap: .5em;
-  }
-
-  .today,
-  .history {
-    flex-direction: column;
-  }
-
-  .user-info {
-    position: static;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .tab-group {
-    gap: .2em .5em;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .tab-btn {
-    padding: .3em .6em;
-  }
-
-  .auth-container {
-    display: block;
-    margin: 0 1rem;
-  }
-
-  .auth-brand {
-    height: 20vh;
-  }
-
-  .auth-brand-content {
-    height: 100%;
-  }
-
-  .auth-brand-title {
-    bottom: 1rem;
-  }
-
-  .auth-form {
-    padding: 1rem 2rem 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .toast-container {
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    transform: none;
-  }
-
-  .toast {
-    min-width: unset;
-    width: 100%;
-  }
-}
 
 
 /* Article Content Styles */
@@ -1196,4 +1117,124 @@ main{
   font-size: 0.9em;
   color: var(--text4);
   margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .mobile-hide {
+    display: none;
+  }
+
+  .blog-wrapper > .inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+  }
+
+  .nav-bg {
+    width: 12rem;
+    height: 12rem;
+    top: -1rem;
+  }
+
+  .nav {
+    font-size: .75rem;
+  }
+
+  .nav-right {
+    min-width: unset;
+  }
+
+  .nav-center {
+    gap: .5em;
+  }
+
+  .today,
+  .history {
+    flex-direction: column;
+  }
+
+  .user-info {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .tab-group {
+    gap: .2em .5em;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: .3em .6em;
+  }
+
+  .auth-container {
+    display: block;
+    margin: 0 1rem;
+  }
+
+  .auth-brand {
+    height: 20vh;
+  }
+
+  .auth-brand-content {
+    height: 100%;
+  }
+
+  .auth-brand-title {
+    bottom: 1rem;
+  }
+
+  .auth-form {
+    padding: 1rem 2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .toast-container {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* Giscus 评论区样式 */
+.comments-section {
+  margin-top: calc(var(--margin) * 1.5);
+  padding: calc(var(--margin) * 1.5);
+}
+
+.comments-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--text1);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--bg2);
+}
+
+.giscus-container {
+  min-height: 200px;
+}
+
+/* 让 giscus iframe 更好地融入页面 */
+.giscus-container .giscus,
+.giscus-container .giscus-frame {
+  width: 100%;
+}
+
+/* giscus 加载状态 */
+.giscus-container:empty::before {
+  content: "加载评论中...";
+  display: block;
+  text-align: center;
+  color: var(--text4);
+  padding: 2rem;
 }

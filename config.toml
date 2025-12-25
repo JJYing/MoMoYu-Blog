@@ -21,7 +21,7 @@ buildExpired = false
 # 文章配置
 [params]
   author = "MoMoYu"
-  description = "研究对象包括向左移 1px 的必要性、这段代码删掉之后会不会崩溃、以及用户到底是根据什么判断要不要点开你的推送"
+  description = "研究对象包括左移 1px 的必要性、这段代码删掉之后会不会崩溃、以及用户到底会不会点开我的推送"
 
 # 分类和标签
 [taxonomies]
@@ -31,6 +31,21 @@ buildExpired = false
 # 文章默认参数
 [params.posts]
   author = "MoMoYu"
+
+# Giscus 评论系统配置
+# 请前往 https://giscus.app/zh-CN 获取以下配置信息
+[params.giscus]
+  enable = true
+  repo = "JJYing/MoMoYu-Blog"                    # 你的 GitHub 仓库，格式: "用户名/仓库名"
+  repoId = "R_kgDOQi_haQ"                  # 仓库 ID
+  category = "Announcements"   # Discussion 分类名称
+  categoryId = "DIC_kwDOQi_hac4C0O7t"              # 分类 ID
+  mapping = "pathname"         # 映射方式：pathname, url, title, og:title, specific, number
+  reactionsEnabled = "1"       # 启用反应: "0" 或 "1"
+  emitMetadata = "0"           # 发送元数据: "0" 或 "1"
+  inputPosition = "top"        # 评论框位置: "top" 或 "bottom"
+  theme = "light"              # 主题: light, dark, preferred_color_scheme 等
+  lang = "zh-CN"               # 语言
 
 # 输出格式
 [outputs]

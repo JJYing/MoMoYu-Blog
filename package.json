@@ -4,5 +4,8 @@
         "dev": "hugo server",
         "build": "hugo --minify",
         "serve": "hugo server"
+    },
+    "dependencies": {
+        "hugo": "^0.0.3"
     }
 }
