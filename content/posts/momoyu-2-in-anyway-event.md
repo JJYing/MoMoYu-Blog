@@ -3,6 +3,7 @@ title: "摸摸鱼计时器 2.0 版本正式公布！"
 description: "@ Anyway.FM 十周年线下活动"
 date: 2025-11-29
 author: "JJ Ying"
+slug: "momoyu-2-in-anyway-event"
 tags:
   - 运营
 ---

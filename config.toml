@@ -1,0 +1,43 @@
+baseURL = "https://blog.momoyu.app"
+languageCode = "zh-cn"
+title = "摸摸鱼研究局"
+
+# 构建配置
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# 分页
+[pagination]
+  pagerSize = 10
+
+# 菜单
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+# 文章配置
+[params]
+  author = "MoMoYu"
+  description = "研究对象包括向左移 1px 的必要性、这段代码删掉之后会不会崩溃、以及用户到底是根据什么判断要不要点开你的推送"
+
+# 分类和标签
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# 文章默认参数
+[params.posts]
+  author = "MoMoYu"
+
+# 输出格式
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+
+# 永久链接
+[permalinks]
+  posts = "/posts/:slug/"
+

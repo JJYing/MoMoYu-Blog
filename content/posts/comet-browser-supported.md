@@ -5,6 +5,9 @@ date: 2025-11-18
 author: "JJ Ying"
 tags:
   - 开发
+slug: "comet-browser-supported"
+# 或者使用 url 完全自定义：
+# url: "/posts/comet-browser-supported/"
 ---
 
 目前我们支持网页统计的浏览器已经包括：

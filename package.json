@@ -1,12 +1,8 @@
 {
     "private": true,
-    "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
-    },
-    "devDependencies": {
-        "@tighten/jigsaw-vite-plugin": "^1.0.1",
-        "vite": "^6.4.1"
+        "dev": "hugo server",
+        "build": "hugo --minify",
+        "serve": "hugo server"
     }
 }

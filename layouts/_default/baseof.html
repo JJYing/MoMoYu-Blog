@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ $page->language ?? 'en' }}">
+<html lang="{{ .Language.Lang | default "en" }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="canonical" href="{{ $page->getUrl() }}">
-        <meta name="description" content="{{ $page->description }}">
+        <link rel="canonical" href="{{ .Permalink }}">
+        <meta name="description" content="{{ .Description | default .Site.Params.description }}">
         <meta name="view-transition" content="same-origin" />
         <link rel="preconnect" href="https://s.anyway.red" crossorigin/>
         <link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
@@ -13,10 +13,9 @@
         <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/regular/regular.css">
         <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/bold/bold.css">
         
-        <title>{{ $page->title }}</title>
-        @viteRefresh()
-        <link rel="stylesheet" href="{{ vite('source/_assets/css/blog.css') }}">
-        <script defer type="module" src="{{ vite('source/_assets/js/main.js') }}"></script>
+        <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+        <link rel="stylesheet" href="{{ "/assets/css/blog.css" | relURL }}">
+        <script defer type="module" src="{{ "/assets/js/main.js" | relURL }}"></script>
         <script>
             var _paq = window._paq = window._paq || [];
             _paq.push(["setCookieDomain", "*.momoyu.app"]);
@@ -33,6 +32,7 @@
           </script>        
     </head>
     <body>
-        @yield('body')
+        {{ block "main" . }}{{ end }}
     </body>
 </html>
+

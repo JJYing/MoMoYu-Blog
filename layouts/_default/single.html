@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="blog-wrapper">
+    <div class="inner blog-inner">
+        <header class="nav blog-nav blog-nav-post">
+            <img src="{{ "/assets/images/blog-logo.avif" | relURL }}" alt="MoMoYu Blog Logo" class="nav-bg">
+            <p class="blog-site-title">MoMoYu Blog</p>
+            <a href="{{ "/" | relURL }}" class="blog-page-title-link">
+                <h1 class="blog-page-title">摸摸鱼研究局</h1>
+            </a>
+            <a href="{{ "/" | relURL }}" class="blog-nav-all-posts">回到首页</a>
+        </header>
+
+        <main>
+            <article class="box article-box">
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-author">
+                            {{ .Params.author | default .Site.Params.author | default "MoMoYu" }}
+                        </span>
+                        <span aria-hidden="true">·</span>
+                        {{ if .Date }}
+                            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                                {{ .Date.Format "2006 年 1 月 2 日" }}
+                            </time>
+                        {{ end }}
+                    </div>
+
+                    <h1 class="article-title">{{ .Title }}</h1>
+
+                    {{ if .Description }}
+                        <p class="article-description">{{ .Description }}</p>
+                    {{ end }}
+
+                    {{ if .Params.tags }}
+                        <div class="post-tags">
+                            {{ range .Params.tags }}
+                                <span class="post-tag"># {{ . }}</span>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+
+                <div class="article-divider"></div>
+
+                <div class="article-content">
+                    {{ .Content }}
+                </div>
+            </article>
+        </main>
+    </div>
+</div>
+{{ end }}
+

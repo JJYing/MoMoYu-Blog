@@ -13,3 +13,8 @@ build_production
 /build_staging/
 /build_production/
 /source/assets/build/
+
+# Hugo
+public/
+resources/
+.hugo_build.lock

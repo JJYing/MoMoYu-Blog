@@ -3,6 +3,7 @@ title: "用摸摸鱼数据来分析用户的工作习惯"
 description: "一次用测试用户数据和 GPT 共同完成的打工人性格小「测试」"
 date: 2025-12-05
 author: "JJ Ying"
+slug: "user-analytics-test"
 tags:
   - 开发
 ---
