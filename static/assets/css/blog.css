@@ -78,6 +78,7 @@ ol {
 
 body {
   background: var(--bg1);
+  overflow-x: hidden;
 }
 
 img {
@@ -171,6 +172,9 @@ a {
 
 .blog-wrapper {
   /* padding: var(--margin); */
+  position: relative;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .blog-wrapper > .inner {
@@ -179,6 +183,16 @@ a {
   gap: var(--margin);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.nav-bg {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  width: 18rem;
+  height: 18rem;
+  object-fit: contain;
+  z-index: 0;
+  view-transition-name: nav-bg;
 }
 
 .box {
@@ -842,16 +856,7 @@ main{
   position: relative;
 }
 
-.nav-bg {
-  position: absolute;
-  top: -2rem;
-  left: 50%;
-  width: 18rem;
-  height: 18rem;
-  object-fit: contain;
-  z-index: 0;
-  view-transition-name: nav-bg;
-}
+
 .index-nav-bg {
   /* top: -4rem; */
   left: 60%;
@@ -888,6 +893,7 @@ main{
 
 .blog-site-title {
   font-size: 0.8em;
+  padding-left: .15em;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--text3);
