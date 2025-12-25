@@ -1,8 +1,8 @@
 {{ define "main" }}
 <div class="blog-wrapper">
+    <img src="{{ "/assets/images/blog-logo.avif" | relURL }}" alt="MoMoYu Blog Logo" class="nav-bg index-nav-bg">
     <div class="inner blog-inner">
         <header class="nav blog-nav blog-nav-index">
-            <img src="{{ "/assets/images/blog-logo.avif" | relURL }}" alt="MoMoYu Blog Logo" class="nav-bg index-nav-bg">
             <p class="blog-site-title">MoMoYu Blog</p>
             <a href="{{ "/" | relURL }}" class="blog-page-title-link">
                 <h1 class="blog-page-title">{{ .Site.Title }}</h1>
