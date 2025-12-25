@@ -1143,3 +1143,56 @@ main{
 .blog-footer-copy p {
   margin: 0;
 }
+
+/* 在线用户统计页面样式 */
+.online-users-stats {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--margin) * 1.5);
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: calc(var(--margin) * 1.5);
+  background: var(--bg1);
+  border-radius: var(--box-radius);
+  border: 1px solid var(--bg2);
+}
+
+.stats-label {
+  font-size: 0.9em;
+  color: var(--text3);
+  font-weight: 500;
+}
+
+.stats-value {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.stats-loading {
+  padding: calc(var(--margin) * 1.5);
+  text-align: center;
+  color: var(--text3);
+  font-size: 1.1em;
+}
+
+.stats-error {
+  padding: calc(var(--margin) * 1.5);
+  text-align: center;
+  color: var(--text2);
+}
+
+.stats-error p {
+  margin: 0.5rem 0;
+}
+
+.stats-error-detail {
+  font-size: 0.9em;
+  color: var(--text4);
+  margin-top: 0.5rem;
+}
