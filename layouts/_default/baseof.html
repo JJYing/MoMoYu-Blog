@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="canonical" href="{{ .Permalink }}">
         <meta name="description" content="{{ .Description | default .Site.Params.description }}">
-        <meta name="view-transition" content="same-origin" />
         <link rel="preconnect" href="https://s.anyway.red" crossorigin/>
         <link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
         
@@ -33,6 +32,18 @@
     </head>
     <body>
         {{ block "main" . }}{{ end }}
+        <footer class="blog-footer">
+            <div class="blog-footer-inner">
+                <div class="blog-footer-links">
+                  <a href="https://momoyu.app" target="_blank" rel="noopener">摸摸鱼计时器首页</a>
+                  <em>·</em>
+                  <a href="https://vote.momoyu.app/" target="_blank" rel="noopener">功能建议 & 投票</a>
+                </div>
+                <div class="blog-footer-copy">
+                    <p>&copy; {{ now.Year }} {{ .Site.Title }}. 保留所有权利。</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
 
