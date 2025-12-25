@@ -43,7 +43,7 @@ buildExpired = false
   mapping = "pathname"         # 映射方式：pathname, url, title, og:title, specific, number
   reactionsEnabled = "1"       # 启用反应: "0" 或 "1"
   emitMetadata = "0"           # 发送元数据: "0" 或 "1"
-  inputPosition = "top"        # 评论框位置: "top" 或 "bottom"
+  inputPosition = "bottom"        # 评论框位置: "top" 或 "bottom"
   theme = "light"              # 主题: light, dark, preferred_color_scheme 等
   lang = "zh-CN"               # 语言
 
