@@ -5,8 +5,17 @@
         return;
     }
 
+    // 使用 CORS 代理服务来绕过跨域限制
+    // 方案1: 使用 allorigins.win (推荐，稳定)
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const targetUrl = encodeURIComponent('https://momoyu.app/logs/online_users_cache.json');
+    
+    // 方案2: 如果方案1不可用，可以尝试使用 corsproxy.io
+    // const proxyUrl = 'https://corsproxy.io/?';
+    // const targetUrl = 'https://momoyu.app/logs/online_users_cache.json';
+
     try {
-        const response = await fetch('https://momoyu.app/logs/online_users_cache.json');
+        const response = await fetch(proxyUrl + targetUrl);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -40,6 +49,9 @@
             <div class="stats-error">
                 <p>加载数据失败，请稍后重试。</p>
                 <p class="stats-error-detail">${error.message}</p>
+                <p class="stats-error-detail" style="margin-top: 0.5rem; font-size: 0.85em;">
+                    提示：如果持续失败，可能需要配置 momoyu.app 服务器的 CORS 头，允许 blog.momoyu.app 访问。
+                </p>
             </div>
         `;
     }
