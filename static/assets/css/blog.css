@@ -187,12 +187,16 @@ a {
 .nav-bg {
   position: absolute;
   top: -2rem;
-  left: 50%;
+  left: 60%;
   width: 18rem;
   height: 18rem;
   object-fit: contain;
   z-index: 0;
   view-transition-name: nav-bg;
+}
+.index-nav-bg {
+  /* top: -4rem; */
+  left: 60%;
 }
 
 .box {
@@ -856,11 +860,6 @@ main{
   position: relative;
 }
 
-
-.index-nav-bg {
-  /* top: -4rem; */
-  left: 60%;
-}
 
 /* Grid Areas */
 .blog-site-title { grid-area: site-title; }
