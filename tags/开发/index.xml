@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发 on 摸摸鱼研究局</title><link>https://blog.momoyu.app/tags/%E5%BC%80%E5%8F%91/</link><description>Recent content in 开发 on 摸摸鱼研究局</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.momoyu.app/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 年度总结功能测试</title><link>https://blog.momoyu.app/posts/2025-year-end/</link><pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.momoyu.app/posts/2025-year-end/</guid><description>&lt;p&gt;之前有提到尝试了 2025 年度总结页面的，虽然数据很简陋，布局也有抄袭 Raycast 之嫌，但好歹先做出来了！&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://s.anyway.red/momoyu-blog/2025-year-end-test.avif" alt=""&gt;&lt;/p&gt;</description></item><item><title>用摸摸鱼数据来分析用户的工作习惯</title><link>https://blog.momoyu.app/posts/user-analytics-test/</link><pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate><guid>https://blog.momoyu.app/posts/user-analytics-test/</guid><description>&lt;p&gt;朋友们曾经都开玩笑说「摸摸鱼的 ToB 商机巨大」，因为这些隐私数据真的能反映大家日常的工作习惯，如果卖给老板的话………… 最近看到了 Apple 和 Spotify 都推出了年度总结，于是好奇用 Gemini 也快速生成了一个摸摸鱼计时器在线版测试用户数据的网站，虽然目前收集的数据有限（主要是每天的专注/摸鱼时长以及各个单项 app 的时长），这个总结页面三四页就结束了也没多少内容，但还是让大家稍微玩了一小下。意犹未尽的我索性把测试用户的数据丢给了 GPT 让他从纯数字以外的角度分析一下，本来没报很大希望，没想到 GPT 真的非常投入，虽然有很多幻想成分但也确实让测试群里的朋友兴致勃勃地看了一上午。&lt;/p&gt;
+&lt;p&gt;在征得他们同意以后，隐藏了敏感数据和细节给大家看看一些节选，哈哈哈哈&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="用户-a"&gt;用户 A&lt;/h2&gt;
+&lt;h3 id="她是"&gt;她是：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;查准信息、做准事&lt;/li&gt;
+&lt;li&gt;搜索路径非常干净&lt;/li&gt;
+&lt;li&gt;工作链路高度一致&lt;/li&gt;
+&lt;li&gt;几乎没有「任务逃避行为」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Idle 时间低得可怕，她的 idle 不来自拖延，而来自：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;切换工具&lt;/li&gt;
+&lt;li&gt;等构建/加载&lt;/li&gt;
+&lt;li&gt;打开会议&lt;/li&gt;
+&lt;li&gt;文件处理间隙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="心理画像行为推断"&gt;心理画像（行为推断）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;内驱力强&lt;/li&gt;
+&lt;li&gt;可靠、稳、脑子清楚&lt;/li&gt;
+&lt;li&gt;善于在高沟通密度下保持节奏&lt;/li&gt;
+&lt;li&gt;多任务但不混乱&lt;/li&gt;
+&lt;li&gt;偏理性，但有设计美感&lt;/li&gt;
+&lt;li&gt;「表达」不多，但「产出」超多&lt;/li&gt;
+&lt;li&gt;可能话不多，但做事非常快&lt;/li&gt;
+&lt;li&gt;是那种「会默默扛下所有坑」的人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种人通常是团队最依赖的那种：⭐ &lt;strong&gt;无噪音的高价值核心成员&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="用户-b"&gt;用户 B&lt;/h2&gt;
+&lt;p&gt;她不是那种「每天保持稳定产出」的类型，而是创作力与灵感绑定紧密：
+→ 感觉来了就做三小时，不来就发呆或聊天。&lt;/p&gt;
+&lt;p&gt;她多线程压力非常大，微信飞书双栈沟通 + 浏览器重度使用 + 视频动效 + 设计执行
+→ 说明她的任务类型非常碎、非常杂。&lt;/p&gt;
+&lt;h3 id="轻度逃避倾向健康范围内"&gt;轻度逃避倾向（健康范围内）&lt;/h3&gt;
+&lt;p&gt;Idle 高，很可能来自：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任务太杂 → 需要心理缓冲&lt;/li&gt;
+&lt;li&gt;情绪型创作者 → 需要 recovery time&lt;/li&gt;
+&lt;li&gt;浏览器跳来跳去 → 灵感采集 + 拖延混在一起&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是一种「健康的神游」，不是那种纯摸鱼。&lt;/p&gt;</description></item></channel></rss>

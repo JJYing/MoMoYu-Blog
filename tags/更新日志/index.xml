@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>更新日志 on 摸摸鱼研究局</title><link>https://blog.momoyu.app/tags/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</link><description>Recent content in 更新日志 on 摸摸鱼研究局</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 18 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.momoyu.app/tags/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml"/><item><title>支持 Comet 浏览器的网页统计</title><link>https://blog.momoyu.app/posts/comet-browser-supported/</link><pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate><guid>https://blog.momoyu.app/posts/comet-browser-supported/</guid><description>&lt;p&gt;目前 &lt;code&gt;V1.1.12&lt;/code&gt; 版本已经支持网页统计的浏览器已经包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Edge&lt;/li&gt;
+&lt;li&gt;Safari&lt;/li&gt;
+&lt;li&gt;OpenAI Atlas&lt;/li&gt;
+&lt;li&gt;Brave&lt;/li&gt;
+&lt;li&gt;Comet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是很遗憾，目前大家呼声很高的 &lt;strong&gt;FireFox&lt;/strong&gt; 以及 The Browser Company 的 &lt;strong&gt;Arc&lt;/strong&gt; 以及 &lt;strong&gt;Dia&lt;/strong&gt; 都支持不了，因为我们现在使用计时方案是利用 macOS 自带的 Automation 里的命令来获取当前 tab 的 URL，但 FireFox 天生不支持相关命令，Chromium 内核的浏览器本来应该都是支持的，但 Arc 以及 Dia 不知为何把整个 Automation 都给去掉了所以也获取不到，暂时没有太好的办法~&lt;/p&gt;</description></item></channel></rss>
