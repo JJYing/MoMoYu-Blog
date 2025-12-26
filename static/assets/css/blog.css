@@ -835,6 +835,34 @@ main{
   color: var(--text1);
   line-height: 1.1;
 }
+.blog-page-title span {
+  --duration: .3s;
+  display: inline-block;
+  animation: bounce var(--duration) ease-out;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-.2em);
+  }
+  50% {
+    transform: translateY(.08em);
+  } 
+  75% {
+    transform: translateY(-.05em);
+  }
+}
+.blog-page-title span:nth-child(1) {
+  animation-delay: calc(var(--duration) * .75);
+}
+.blog-page-title span:nth-child(2) {
+  animation-delay: calc(var(--duration) * 1);
+}
+.blog-page-title span:nth-child(3) {
+  animation-delay: calc(var(--duration) * 1.25);
+}
 
 .blog-description {
   font-size: 1em;
