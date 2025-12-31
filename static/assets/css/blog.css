@@ -864,11 +864,13 @@ main{
   animation-delay: calc(var(--duration) * 1.25);
 }
 
+
 .blog-description {
   font-size: 1em;
   color: var(--text3);
   margin-top: 0.5rem;
   view-transition-name: blog-description;
+  line-height: 1.6;
 }
 
 .blog-nav-all-posts {

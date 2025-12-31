@@ -21,7 +21,7 @@ buildExpired = false
 # 文章配置
 [params]
   author = "MoMoYu"
-  description = "研究对象包括左移 1px 的必要性、这段代码删掉之后会不会崩溃、以及用户到底会不会点开我的推送"
+  description = "研究对象包括左移 1px 的必要性、删掉这段代码会不会爆炸、以及创作者 JJ 在反复试错中的创作轨迹"
 
 # 分类和标签
 [taxonomies]
