@@ -1,0 +1,2 @@
+# 强制所有文本文件在仓库中存储为 LF，在 Windows 工作区检出为 CRLF
+* text=auto
