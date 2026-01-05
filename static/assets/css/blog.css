@@ -594,6 +594,10 @@ main{
   position: relative;
   overflow: hidden;
 }
+.post-item > * {
+  z-index: 1;
+  position: relative;
+}
 
 .post-icon {
   position: absolute;
@@ -612,6 +616,7 @@ main{
     transition: var(--transition-in);
   }
 }
+
 
 .post-meta {
   display: flex;
