@@ -8,6 +8,7 @@ tags:
 slug: "comet-browser-supported"
 # 或者使用 url 完全自定义：
 # url: "/posts/comet-browser-supported/"
+post-icon: "meteor"
 ---
 
 目前 `V1.1.12` 版本已经支持网页统计的浏览器已经包括：

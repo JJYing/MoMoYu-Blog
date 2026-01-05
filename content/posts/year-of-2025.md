@@ -6,6 +6,7 @@ author: "JJ Ying"
 tags:
   - 生活
 slug: "jj-2025"
+post-icon: "calendar-check"
 ---
 因为老爸的重病，我本来以为 2023 是我最黑暗的一年没有之一，没想到「之一」来得这么快。
 

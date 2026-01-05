@@ -67,9 +67,12 @@ ol {
   --box-radius: 18px;
   --box-shadow: 0 4px 8px -2px rgba(202, 61, 18, .08);
 
+  --curve-out: cubic-bezier(0.12, 0, 0.9, -0.14);
+  --curve-in: cubic-bezier(0.41, 1.22, 0.54, 1.24);
+
   --transition: all .2s ease;
-  --transition-out: all .22s cubic-bezier(0.12, 0, 0.9, -0.14);
-  --transition-in: all .17s cubic-bezier(0.41, 1.22, 0.54, 1.24);
+  --transition-out: all .22s var(--curve-out);
+  --transition-in: all .17s var(--curve-in);
   text-rendering: optimizeLegibility;
   /* text-wrap: pretty; */
   color: var(--text1);
@@ -588,6 +591,26 @@ main{
 .post-item {
   display: block;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-20%) rotate(0deg);
+  font-size: 8rem;
+  /* opacity: 0.15; */
+  color: var(--bg1);
+  pointer-events: none;
+  z-index: 0;
+  transition: var(--transition-out);
+
+  .post-item:hover & {
+    transform: translateY(-30%) rotate(10deg) scale(1.25);
+    transition: var(--transition-in);
+  }
 }
 
 .post-meta {
@@ -601,8 +624,16 @@ main{
 .post-title {
   margin-top: 0.75rem;
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text1);
+  transition: var(--transition-out);  
+
+  .post-item:hover & {  
+    color: var(--secondary);
+    transition: var(--transition-in);
+    animation: link-shake 0.3s var(--curve-in) both;    
+  }
+
 }
 
 .post-description {
@@ -622,7 +653,7 @@ main{
   background: hsla(var(--primary-H), var(--primary-S), var(--primary-L), .1);
   padding: 0.25em 0.75em;
   font-size: 0.75em;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--primary);
 }
 
@@ -719,6 +750,9 @@ main{
   display: block;
   text-decoration: none;
   align-self: start;
+  .blog-nav-index & {
+    pointer-events: none;
+   }
 }
 
 .blog-page-title {
@@ -727,7 +761,37 @@ main{
   font-weight: 700;
   color: var(--text1);
   line-height: 1.1;
+  transition: var(--transition-out);
+
+
+
+  .blog-page-title-link:hover & {
+    color: var(--primary);
+    transition: var(--transition-in);
+    animation: link-shake 0.3s var(--curve-in) both;
+  }
 }
+@keyframes link-shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(1.5px);
+  }  
+  60% {
+    transform: translateX(-1px);
+  }
+  80% {
+    transform: translateX(.5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .blog-page-title span {
   --duration: .3s;
   display: inline-block;
@@ -768,7 +832,7 @@ main{
 
 .blog-nav-all-posts {
   font-size: 0.9em;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--primary);
   justify-self: end;
   align-self: center;
@@ -924,7 +988,7 @@ main{
 }
 
 .article-content table th {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text1);
 }
 

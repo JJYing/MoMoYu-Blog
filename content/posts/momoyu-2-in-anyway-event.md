@@ -4,6 +4,7 @@ description: "@ Anyway.FM 十周年线下活动"
 date: 2025-11-29
 author: "JJ Ying"
 slug: "momoyu-2-in-anyway-event"
+post-icon: "bullhorn"
 tags:
   - 运营
 ---

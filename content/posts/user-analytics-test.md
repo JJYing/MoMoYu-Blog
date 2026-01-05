@@ -4,6 +4,7 @@ description: "一次用测试用户数据和 GPT 共同完成的打工人性格�
 date: 2025-12-05
 author: "JJ Ying"
 slug: "user-analytics-test"
+post-icon: "glasses"
 tags:
   - 开发
 ---
