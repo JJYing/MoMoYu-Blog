@@ -33,7 +33,7 @@
                             {{ end }}
                             <div class="post-meta">
                                 {{ if $post.Date }}
-                                    <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "2006 年 1 月 2 日" }}</time>
+                                    <time datetime="{{ $post.Date.Format "2006-01-02T15:04:05Z07:00" }}" data-relative="true" data-absolute="{{ $post.Date.Format "2006 年 1 月 2 日" }}">{{ $post.Date.Format "2006 年 1 月 2 日" }}</time>
                                 {{ end }}
                             </div>
                             <h3 class="post-title">{{ $post.Title }}</h3>
@@ -53,3 +53,4 @@
     </div>
 </div>
 {{ end }}
+
