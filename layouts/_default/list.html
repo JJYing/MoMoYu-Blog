@@ -26,7 +26,8 @@
             {{ else }}
                 <div class="post-list">
                     {{ range $posts }}
-                        <a href="{{ .Permalink }}" class="box post-item">
+                        {{ $externalLink := index .Params "external-link" }}
+                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ .Permalink }}{{ end }}" class="box post-item"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}>
                             {{ if index .Params "post-icon" }}
                                 <i class="fa-regular fa-{{ index .Params "post-icon" }} post-icon"></i>
                             {{ end }}
@@ -52,4 +53,3 @@
     </div>
 </div>
 {{ end }}
-
