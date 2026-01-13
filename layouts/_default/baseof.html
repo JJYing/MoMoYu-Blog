@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="https://s.anyway.red/font/alihealth2/bold/bold.css">
         
         <title>{{ if and .Title (not .IsHome) }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-        <link rel="stylesheet" href="{{ "/assets/css/blog.css" | relURL }}">
+        {{ $css := resources.Get "css/blog.css" | fingerprint }}
+        <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
         <script defer type="module" src="{{ "/assets/js/main.js" | relURL }}"></script>
         <script>
             var _paq = window._paq = window._paq || [];
