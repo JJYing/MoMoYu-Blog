@@ -25,22 +25,22 @@
                 </div>
             {{ else }}
                 <div class="post-list">
-                    {{ range $posts }}
-                        {{ $externalLink := index .Params "external-link" }}
-                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ .Permalink }}{{ end }}" class="box post-item"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}>
-                            {{ if index .Params "post-icon" }}
-                                <i class="fa-regular fa-{{ index .Params "post-icon" }} post-icon"></i>
+                    {{ range $index, $post := $posts }}
+                        {{ $externalLink := index $post.Params "external-link" }}
+                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ $post.Permalink }}{{ end }}" class="box post-item p{{ add $index 1 }}"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}>
+                            {{ if index $post.Params "post-icon" }}
+                                <i class="fa-regular fa-{{ index $post.Params "post-icon" }} post-icon"></i>
                             {{ end }}
                             <div class="post-meta">
-                                {{ if .Date }}
-                                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006 年 1 月 2 日" }}</time>
+                                {{ if $post.Date }}
+                                    <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "2006 年 1 月 2 日" }}</time>
                                 {{ end }}
                             </div>
-                            <h3 class="post-title">{{ .Title }}</h3>
-                            <p class="post-description">{{ .Description | default "点击阅读全文。" }}</p>
-                            {{ if .Params.tags }}
+                            <h3 class="post-title">{{ $post.Title }}</h3>
+                            <p class="post-description">{{ $post.Description | default "点击阅读全文。" }}</p>
+                            {{ if $post.Params.tags }}
                                 <div class="post-tags">
-                                    {{ range .Params.tags }}
+                                    {{ range $post.Params.tags }}
                                         <span class="post-tag"># {{ . }}</span>
                                     {{ end }}
                                 </div>
