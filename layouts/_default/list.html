@@ -27,8 +27,12 @@
                 <div class="post-list">
                     {{ range $index, $post := $posts }}
                         {{ $externalLink := index $post.Params "external-link" }}
-                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ $post.Permalink }}{{ end }}" class="box post-item p{{ add $index 1 }}"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}>
-                            {{ if index $post.Params "post-icon" }}
+                        {{ $coverImage := index $post.Params "cover-image" }}
+                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ $post.Permalink }}{{ end }}" class="box post-item p{{ add $index 1 }}{{ if $coverImage }} post-item-cover{{ end }}"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $coverImage }} style="background-image: url('{{ $coverImage }}');"{{ end }}>
+                            {{ if $coverImage }}
+                                <div class="post-cover-overlay"></div>
+                            {{ end }}
+                            {{ if and (not $coverImage) (index $post.Params "post-icon") }}
                                 <i class="fa-regular fa-{{ index $post.Params "post-icon" }} post-icon"></i>
                             {{ end }}
                             <div class="post-meta">
@@ -37,13 +41,15 @@
                                 {{ end }}
                             </div>
                             <h3 class="post-title">{{ $post.Title }}</h3>
-                            <p class="post-description">{{ $post.Description | default "点击阅读全文。" }}</p>
-                            {{ if $post.Params.tags }}
-                                <div class="post-tags">
-                                    {{ range $post.Params.tags }}
-                                        <span class="post-tag"># {{ . }}</span>
-                                    {{ end }}
-                                </div>
+                            {{ if not $coverImage }}
+                                <p class="post-description">{{ $post.Description | default "点击阅读全文。" }}</p>
+                                {{ if $post.Params.tags }}
+                                    <div class="post-tags">
+                                        {{ range $post.Params.tags }}
+                                            <span class="post-tag"># {{ . }}</span>
+                                        {{ end }}
+                                    </div>
+                                {{ end }}
                             {{ end }}
                         </a>
                     {{ end }}

@@ -597,7 +597,9 @@ main{
     "p4 p4 p5 p5 p5 p5 p3 p3"
     "p4 p4 p5 p5 p5 p5 p7 p7"
     "p4 p4 p6 p6 p6 p6 p7 p7"
-    "p8 p8 p8 p8 p8 p8 p7 p7";
+    /* "p8 p8 p8 p8 p8 p8 p9 p9" */
+    "p8 p8 p8 p8 p9 p9 p9 p9"
+    "p10 p10 p10 p10 p10 p10 p10 p10";
 }
 
 .post-item {
@@ -618,6 +620,43 @@ main{
 .post-item > * {
   z-index: 1;
   position: relative;
+}
+
+.post-item-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.post-cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .5) 30%, rgba(0, 0, 0, 0) 100%);
+  z-index: 0;
+  transition: var(--transition-out);
+  opacity: .5;
+}
+
+.post-item-cover:hover .post-cover-overlay {
+  opacity: .6;
+  transition: var(--transition-in);
+}
+
+.post-item-cover .post-meta {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.post-item-cover .post-title {
+  color: var(--bg0);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 
 .post-icon {
@@ -658,6 +697,10 @@ main{
     color: var(--secondary);
     transition: var(--transition-in);
     animation: link-shake 0.3s var(--curve-in) both;    
+  }
+  .post-item.post-item-cover:hover & {
+    color: var(--bg0);
+    /* animation: link-shake 0.3s var(--curve-in) both; */
   }
 
 }
@@ -974,6 +1017,12 @@ main{
 .article-content strong {
   font-weight: 700;
   color: var(--text1);
+  transition: var(--transition-out);
+}
+
+.article-content a:hover strong {
+  color: var(--primary);
+  transition: var(--transition-in);
 }
 
 .article-content em {
