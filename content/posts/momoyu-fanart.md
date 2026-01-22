@@ -33,5 +33,8 @@ cover-image: "https://s.anyway.red/momoyu-blog/momoyu-offline-1.jpg"
 
 ![](https://s.anyway.red/momoyu-blog/momoyu-offline-1.jpg)
 
+甚至 Ethan 还自掏腰包，制作了这款徽章，哈哈哈哈哈
+
+![](https://s.anyway.red/momoyu-blog/momoyu-offline-5.jpg)
 
 说实话，这个鱼 + 时钟的 logo 我在确定的时候其实有点儿草率，就一次生成，除了扣一下边调整一下阴影也没做太多的修改，对比起大家在这个上面画的心思真的有点儿汗颜哈哈哈哈~
