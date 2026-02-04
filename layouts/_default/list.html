@@ -1,62 +1,90 @@
 {{ define "main" }}
 <div class="blog-wrapper">
-    <div class="nav-bg index-nav-bg">
-        <div class="inner">
-            <img src="{{ "/assets/images/blog-logo.avif" | relURL }}" alt="MoMoYu Blog Logo" class="nav-bg-1">
-            <img src="https://s.anyway.red/momoyu/blink-main.avif" class="nav-bg-2">
-        </div>
-    </div>
-    
-    
-    <div class="inner blog-inner">
-        <header class="nav blog-nav blog-nav-index">
-            <p class="blog-site-title">MoMoYu Blog</p>
-            <a href="{{ "/" | relURL }}" class="blog-page-title-link">
-                <h1 class="blog-page-title"><span>摸</span><span>摸</span><span>鱼</span>研究局</h1>
-            </a>
-            <p class="blog-description">{{ .Site.Params.description }}</p>
-        </header>
+	<div class="nav-bg index-nav-bg">
+		<div class="inner">
+			<img src="{{ "/assets/images/blog-logo.avif" | relURL }}" alt="MoMoYu Blog Logo" class="nav-bg-1">
+			<img src="https://s.anyway.red/momoyu/blink-main.avif" class="nav-bg-2">
+		</div>
+	</div>
 
-        <main>
-            {{ $posts := where .Site.RegularPages "Section" "posts" }}
-            {{ if eq (len $posts) 0 }}
-                <div class="box empty-posts-message">
-                    还没有文章。试着在 <code class="inline-code">content/posts</code> 新建一篇 Markdown 文件吧！
-                </div>
-            {{ else }}
-                <div class="post-list">
-                    {{ range $index, $post := $posts }}
-                        {{ $externalLink := index $post.Params "external-link" }}
-                        {{ $coverImage := index $post.Params "cover-image" }}
-                        <a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ $post.Permalink }}{{ end }}" class="box post-item p{{ add $index 1 }}{{ if $coverImage }} post-item-cover{{ end }}"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $coverImage }} style="background-image: url('{{ $coverImage }}');"{{ end }}>
-                            {{ if $coverImage }}
-                                <div class="post-cover-overlay"></div>
-                            {{ end }}
-                            {{ if and (not $coverImage) (index $post.Params "post-icon") }}
-                                <i class="fa-regular fa-{{ index $post.Params "post-icon" }} post-icon"></i>
-                            {{ end }}
-                            <div class="post-meta">
-                                {{ if $post.Date }}
-                                    <time datetime="{{ $post.Date.Format "2006-01-02T15:04:05Z07:00" }}" data-relative="true" data-absolute="{{ $post.Date.Format "2006 年 1 月 2 日" }}">{{ $post.Date.Format "2006 年 1 月 2 日" }}</time>
-                                {{ end }}
-                            </div>
-                            <h3 class="post-title">{{ $post.Title }}</h3>
-                            {{ if not $coverImage }}
-                                <p class="post-description">{{ $post.Description | default "点击阅读全文。" }}</p>
-                                {{ if $post.Params.tags }}
-                                    <div class="post-tags">
-                                        {{ range $post.Params.tags }}
-                                            <span class="post-tag"># {{ . }}</span>
-                                        {{ end }}
-                                    </div>
-                                {{ end }}
-                            {{ end }}
-                        </a>
-                    {{ end }}
-                </div>
-            {{ end }}
-        </main>
-    </div>
+	<div class="inner blog-inner">
+		<header class="nav blog-nav blog-nav-index">
+			<p class="blog-site-title">MoMoYu Blog</p>
+			<a href="{{ "/" | relURL }}" class="blog-page-title-link">
+				<h1 class="blog-page-title"><span>摸</span><span>摸</span><span>鱼</span>研究局</h1>
+			</a>
+			<p class="blog-description">{{ .Site.Params.description }}</p>
+		</header>
+
+		<main>
+			{{ $posts := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+			{{ if eq (len $posts) 0 }}
+				<div class="box empty-posts-message">
+					还没有文章。试着在 <code class="inline-code">content/posts</code> 新建一篇 Markdown 文件吧！
+				</div>
+			{{ else }}
+				{{ $paginator := .Paginate $posts }}
+				<div class="post-list">
+					{{ range $index, $post := $paginator.Pages }}
+						{{ $externalLink := index $post.Params "external-link" }}
+						{{ $coverImage := index $post.Params "cover-image" }}
+						<a href="{{ if $externalLink }}{{ $externalLink }}{{ else }}{{ $post.Permalink }}{{ end }}" class="box post-item p{{ add $index 1 }}{{ if $coverImage }} post-item-cover{{ end }}"{{ if $externalLink }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $coverImage }} style="background-image: url('{{ $coverImage }}');"{{ end }}>
+							{{ if $coverImage }}
+								<div class="post-cover-overlay"></div>
+							{{ end }}
+							{{ if and (not $coverImage) (index $post.Params "post-icon") }}
+								<i class="fa-regular fa-{{ index $post.Params "post-icon" }} post-icon"></i>
+							{{ end }}
+							<div class="post-meta">
+								{{ if $post.Date }}
+									<time datetime="{{ $post.Date.Format "2006-01-02T15:04:05Z07:00" }}" data-relative="true" data-absolute="{{ $post.Date.Format "2006 年 1 月 2 日" }}">{{ $post.Date.Format "2006 年 1 月 2 日" }}</time>
+								{{ end }}
+							</div>
+							<h3 class="post-title">{{ $post.Title }}</h3>
+							{{ if not $coverImage }}
+								<p class="post-description">{{ $post.Description | default "" }}</p>
+								{{ if $post.Params.tags }}
+									<div class="post-tags">
+										{{ range $post.Params.tags }}
+											<span class="post-tag"># {{ . }}</span>
+										{{ end }}
+									</div>
+								{{ end }}
+							{{ end }}
+						</a>
+					{{ end }}
+				</div>
+
+				{{ if gt $paginator.TotalPages 1 }}
+					<nav class="pagination box" aria-label="Posts pagination">
+						{{ if eq $paginator.PageNumber 1 }}
+							{{ with $paginator.Next }}
+								<a class="pagination-link" href="{{ .URL }}">下一页</a>
+							{{ end }}
+						{{ else }}
+							{{ with $paginator.Prev }}
+								<a class="pagination-link" href="{{ .URL }}">上一页</a>
+							{{ else }}
+								<span class="pagination-link is-disabled" aria-disabled="true">上一页</span>
+							{{ end }}
+							{{ range $paginator.Pagers }}
+								{{ if eq .PageNumber $paginator.PageNumber }}
+									<span class="pagination-link is-current" aria-current="page">{{ .PageNumber }}</span>
+								{{ else }}
+									<a class="pagination-link" href="{{ .URL }}">{{ .PageNumber }}</a>
+								{{ end }}
+							{{ end }}
+							{{ with $paginator.Next }}
+								<a class="pagination-link" href="{{ .URL }}">下一页</a>
+							{{ else }}
+								<span class="pagination-link is-disabled" aria-disabled="true">下一页</span>
+							{{ end }}
+						{{ end }}
+					</nav>
+				{{ end }}
+			{{ end }}
+		</main>
+	</div>
 </div>
 {{ end }}
 

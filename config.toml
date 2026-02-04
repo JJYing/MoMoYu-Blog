@@ -9,7 +9,7 @@ buildExpired = false
 
 # 分页
 [pagination]
-  pagerSize = 10
+  pagerSize = 9
 
 # 菜单
 [menu]

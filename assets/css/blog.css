@@ -601,6 +601,45 @@ main{
     "p8 p8 p8 p8 p9 p9 p9 p9"
     "p10 p10 p10 p10 p10 p10 p10 p10";
 }
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+	/* margin-top: var(--margin); */
+	flex-wrap: wrap;
+}
+
+.pagination-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.25rem;
+	padding: .35rem .75rem;
+	border-radius: 999px;
+	background: var(--bg1);
+	color: var(--text2);
+	font-size: .9rem;
+	transition: var(--transition-out);
+  font-weight: 700;
+}
+
+.pagination-link:hover {
+	color: var(--primary);
+	background: hsla(var(--primary-H), var(--primary-S), var(--primary-L), .12);
+	transition: var(--transition-in);
+}
+
+.pagination-link.is-current {
+	background: var(--primary);
+	color: var(--bg0);
+	pointer-events: none;
+}
+
+.pagination-link.is-disabled {
+	opacity: .45;
+	pointer-events: none;
+}
 
 .post-item {
   display: block;
