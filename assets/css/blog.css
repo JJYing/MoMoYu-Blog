@@ -223,7 +223,7 @@ img.nav-bg-2{
 
 .box {
   background: var(--bg0);
-  padding: calc(var(--margin) * 1);
+  padding: calc(var(--margin) * 1.5);
   border-radius: var(--box-radius);
   box-shadow: var(--box-shadow);
 
@@ -553,7 +553,7 @@ img.nav-bg-2{
 .blog-inner {
   display: block !important;
   /* Override .blog-wrapper > .inner grid */
-  max-width: 900px !important;
+  max-width: 1000px !important;
   /* Override .blog-wrapper > .inner max-width */
 }
 

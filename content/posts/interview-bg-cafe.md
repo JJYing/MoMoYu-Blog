@@ -6,6 +6,6 @@ author: "JJ Ying"
 tags:
   - 采访
 slug: "interview-bg-cafe"
-post-icon: "champagne-glasses"
+post-icon: "microphone"
 external-link: "https://mp.weixin.qq.com/s/fxDYZDh8j_KSzWCipjONpA"
 ---
