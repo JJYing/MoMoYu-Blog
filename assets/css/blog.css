@@ -766,36 +766,38 @@ main{
 }
 
 .shake-item{
-  animation: shake-item .4s ease-in both;
+  animation: shake-item .4s ease both;
   
-  &:nth-of-type(1){animation-delay: 0s;}
-  &:nth-of-type(2){animation-delay: .05s;}
-  &:nth-of-type(3){animation-delay: .1s;}
-  &:nth-of-type(4){animation-delay: .15s;}
-  &:nth-of-type(5){animation-delay: .2s;}
-  &:nth-of-type(6){animation-delay: .25s;}
-  &:nth-of-type(7){animation-delay: .3s;}
-  &:nth-of-type(8){animation-delay: .35s;}
+  &:nth-of-type(1){animation-delay: 0s;--rand:1}
+  &:nth-of-type(2){animation-delay: .05s;--rand:-.7}
+  &:nth-of-type(3){animation-delay: .1s;--rand:-.6}
+  &:nth-of-type(4){animation-delay: .15s;--rand:.5}
+  &:nth-of-type(5){animation-delay: .2s;--rand:.2}
+  &:nth-of-type(6){animation-delay: .25s;--rand:-.3}
+  &:nth-of-type(7){animation-delay: .3s;--rand:.7}
+  &:nth-of-type(8){animation-delay: .35s;--rand:.2}
+  &:nth-of-type(9){animation-delay: .4s;--rand:-.9}
+  &:nth-of-type(10){animation-delay: .45s;--rand:.8}
 }
 @keyframes shake-item{
   0%{
-    transform: translateX(0);
+    transform: none;
     opacity: 0;
   }
   20%{
-    transform: translateX(2px);
+    transform: rotate(calc(var(--rand) * 2deg));
   }
   40%{
-    transform: translateY(-1px) translateX(1px);
+    transform: rotate(calc(var(--rand) * -1.5deg));
   }  
   60%{
-    transform: translateY(0px) translateX(-2px);
+    transform: rotate(calc(var(--rand) * 1.7deg));
   }  
   80%{
-    transform: translateY(1px) translateX(-1px);
+    transform: rotate(calc(var(--rand) * -1.5deg));
   }  
   100%{
-    transform: translateX(0);
+    transform: none;
     opacity: 1;    
   }  
 }
