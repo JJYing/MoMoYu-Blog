@@ -9,13 +9,13 @@
 		<meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
 		<meta property="og:url" content="{{ .Permalink }}">
 		<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-		<meta property="og:image" content="https://momoyu.app/og.png">
+		<meta property="og:image" content="{{ "/images/og.jpg" | relURL }}">
 		<meta property="og:site_name" content="{{ .Site.Title }}">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="{{ if and .Title (not .IsHome) }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
 		<meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}">
 		<meta name="twitter:url" content="{{ .Permalink }}">
-		<meta name="twitter:image" content="https://momoyu.app/og.png">
+		<meta name="twitter:image" content="{{ "/images/og.jpg" | relURL }}">
 		<link rel="preconnect" href="https://s.anyway.red" crossorigin/>
 		<link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
 
