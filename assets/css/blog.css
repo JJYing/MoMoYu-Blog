@@ -65,7 +65,9 @@ ol {
   --margin: 1rem;
 
   --box-radius: 18px;
-  --box-shadow: 0 4px 8px -2px rgba(202, 61, 18, .08);
+  --box-shadow: 
+    0 2px 4px -1px rgba(202, 61, 18, .06),
+    0 4px 8px -2px rgba(202, 61, 18, .05);
 
   --curve-out: cubic-bezier(0.12, 0, 0.9, -0.14);
   --curve-in: cubic-bezier(0.41, 1.22, 0.54, 1.24);
@@ -587,19 +589,161 @@ main{
   flex-direction: column;
   gap: var(--margin);
   display: grid;
-  /* grid-template-areas:
-    "p1 p2 p2"
-    "p1 p3 p3"
-    "p4 p4 p5"
-    "p6 p6 p5"; */
-    grid-template-areas:
+  margin-bottom: var(--margin);
+  grid-template-rows: repeat(6, min-content);
+  grid-template-areas:
     "p1 p1 p1 p2 p2 p2 p3 p3"
     "p4 p4 p5 p5 p5 p5 p3 p3"
     "p4 p4 p5 p5 p5 p5 p7 p7"
     "p4 p4 p6 p6 p6 p6 p7 p7"
-    /* "p8 p8 p8 p8 p8 p8 p9 p9" */
     "p8 p8 p8 p8 p9 p9 p9 p9"
     "p10 p10 p10 p10 p10 p10 p10 p10";
+
+  &.is-first-page{
+    grid-template-rows: repeat(5, min-content);    
+    grid-template-areas:
+      "p1 p1 p1 p2 p2 p2 draft draft"
+      "p3 p3 p4 p4 p4 p4 draft draft"
+      "p3 p3 p4 p4 p4 p4 draft draft"
+      "p3 p3 p5 p5 p5 p5 draft draft"
+      "p6 p6 p6 p6 p7 p7 p7 p7";    
+  }
+}
+.post-item.draft-box{
+  grid-area: draft;
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin);
+  position: relative;
+  min-width: 300px;
+  padding: var(--margin);
+  background: var(--bg3);
+
+  & h3 i{
+    margin-right: .35em;
+  }
+}
+.post-item > .draft-list{
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin);
+  position: absolute;
+  top: calc(var(--margin) * 1 + 2rem);
+  left: calc(var(--margin) * 1);
+  right: calc(var(--margin) * 1);
+  bottom: calc(var(--margin) * 1);
+}
+.draft-item{
+  flex: 1 1 auto;
+  overflow: hidden;
+  border-radius: calc(var(--box-radius) / 3);
+  cursor: zoom-in;
+  transition: var(--transition-out);
+  position: relative;
+
+  &:hover{
+    scale: 1.04;
+    transition: var(--transition-in);
+    box-shadow: 0 0 0 4px var(--bg0);
+  }
+  &:nth-child(1):hover{rotate: -1.2deg;}
+  &:nth-child(2):hover{rotate: .8deg;}
+  &:nth-child(3):hover{rotate: -2deg;}
+}
+.draft-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.draft-text{
+  /* display: none; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: var(--transition-out);
+  font-size: .75rem;
+  color: var(--bg0);
+  text-align: center;
+  padding: 1em;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.8) 100%);
+
+  .draft-item:hover &{
+    opacity: 1;
+    transition: var(--transition-in);
+  }
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(15, 12, 11, .92);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-content {
+  width: min(100%, 1400px);
+  height: min(100%, calc(100vh - 8rem));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: .5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .35);
+  user-select: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, .28);
+}
+
+.lightbox-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  margin: 0;
+  width: min(90vw, 900px);
+  text-align: center;
+  color: rgba(255, 255, 255, .92);
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 .pagination {
 	display: flex;
@@ -1322,6 +1466,11 @@ main{
   .toast {
     min-width: unset;
     width: 100%;
+  }
+  .post-item.draft-box{
+    min-width: unset;
+    height: 85vh;
+    /* min-height: ; */
   }
 }
 

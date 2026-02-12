@@ -24,7 +24,7 @@
 				</div>
 			{{ else }}
 				{{ $paginator := .Paginate $posts }}
-				<div class="post-list">
+				<div class="post-list{{ if eq $paginator.PageNumber 1 }} is-first-page{{ else }} is-paged{{ end }}">
 					{{ range $index, $post := $paginator.Pages }}
 						{{ $externalLink := index $post.Params "external-link" }}
 						{{ $coverImage := index $post.Params "cover-image" }}
@@ -52,6 +52,26 @@
 								{{ end }}
 							{{ end }}
 						</a>
+					{{ end }}
+					{{ if eq $paginator.PageNumber 1 }}
+						{{ $draftBaseURL := "https://s.anyway.red/momoyu-blog/" }}
+						{{ $draftItems := slice
+							(dict "image" "fish-in-rive.avif" "text" "摸摸鱼 2.0 里会用到的小鱼游动动画 Rive 版")
+							(dict "image" "logo-handmade-1.avif" "text" "手工毛毡版摸摸鱼 logo")
+							(dict "image" "personality-2.png" "text" "全新引入的「切换次数」分析维度")
+						}}
+						<div class="box draft-box post-item">
+							<h3><i class="fa-regular fa-flask"></i>研究碎片</h3>
+							<div class="draft-list">
+								{{ range $draftItems }}
+									{{ $imageURL := printf "%s%s" $draftBaseURL .image }}
+									<a class="draft-item shake-item" href="{{ $imageURL }}">
+										<img src="{{ $imageURL }}" alt="{{ .text }}">
+										<div class="draft-text">{{ .text }}</div>
+									</a>
+								{{ end }}
+							</div>
+						</div>
 					{{ end }}
 				</div>
 
@@ -87,4 +107,3 @@
 	</div>
 </div>
 {{ end }}
-
