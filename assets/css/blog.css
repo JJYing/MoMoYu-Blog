@@ -602,11 +602,11 @@ main{
   &.is-first-page{
     grid-template-rows: repeat(5, min-content);    
     grid-template-areas:
-      "p1 p1 p1 p2 p2 p2 draft draft"
-      "p3 p3 p4 p4 p4 p4 draft draft"
-      "p3 p3 p4 p4 p4 p4 draft draft"
-      "p3 p3 p5 p5 p5 p5 draft draft"
-      "p6 p6 p6 p6 p7 p7 p7 p7";    
+      "p1 p1 p1 p1 p2 p2 p2 draft draft"
+      "p3 p3 p3 p4 p4 p4 p4 draft draft"
+      "p3 p3 p3 p4 p4 p4 p4 draft draft"
+      "p3 p3 p3 p5 p5 p5 p5 draft draft"
+      "p6 p6 p6 p6 p6 p7 p7 p7 p7";
   }
 }
 .post-item.draft-box{
