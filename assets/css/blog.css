@@ -874,7 +874,8 @@ body.lightbox-open {
   font-size: 1.5em;
   font-weight: 700;
   color: var(--text1);
-  transition: var(--transition-out);  
+  transition: var(--transition-out);
+  text-wrap: pretty;
 
   .post-item:hover & {  
     color: var(--secondary);
