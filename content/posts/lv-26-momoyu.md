@@ -1,6 +1,6 @@
 ---
 title: "摸摸鱼将去 Let's Vision 2026 摆摊！"
-description: "摸摸鱼计时器目前已支持 6 种浏览器"
+description: "月底漕河泾见~"
 date: 2026-03-13
 author: "JJ Ying"
 tags:
