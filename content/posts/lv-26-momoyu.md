@@ -10,6 +10,8 @@ slug: "lv-26-momoyu"
 # url: "/posts/comet-browser-supported/"
 post-icon: "shop"
 ---
+![](http://s.anyway.red/momoyu-blog/lv26-poster.jpg)
+
 
 感谢 **LET'S VISION 2026** 大会的邀请，本鱼将第一次线下摆摊~ 什么是 **LET'S VISION 2026**？这是一个三月底在上海市举行的创作者派对：
 
