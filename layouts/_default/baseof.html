@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="canonical" href="{{ .Permalink }}">
-		<meta name="description" content="{{ .Description | default .Site.Params.description }}">
-
+		<meta name="description" content="摸摸鱼研究局是摸摸鱼计时器开发者 JJ 的开发日志与实验记录，记录 macOS 菜单栏应用的设计、开发、运营与独立开发者的创作轨迹。">
+    <meta name="robots" content="index,follow">
+    <meta property="og:locale" content="zh_CN">
 		<meta property="og:title" content="{{ if and .Title (not .IsHome) }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
 		<meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
 		<meta property="og:url" content="{{ .Permalink }}">
 		<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-		<meta property="og:image" content="{{ "/assets/images/og.jpg" | relURL }}">
+		<meta property="og:image" content="{{ "https://blog.momoyu.app/assets/images/og.jpg" | relURL }}">
 		<meta property="og:site_name" content="{{ .Site.Title }}">
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="{{ if and .Title (not .IsHome) }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
 		<meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}">
 		<meta name="twitter:url" content="{{ .Permalink }}">
-		<meta name="twitter:image" content="{{ "/assets/images/og.jpg" | relURL }}">
+		<meta name="twitter:image" content="{{ "https://blog.momoyu.app/assets/images/og.jpg" | relURL }}">
 
 		<link rel="preconnect" href="https://s.anyway.red" crossorigin/>
 		<link rel="icon" href="https://s.anyway.red/momoyu/favicon.png">
@@ -56,6 +57,19 @@
 				</div>
 			</div>
 		</footer>
+    <script type="application/ld+json">
+      {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "摸摸鱼研究局",
+      "url": "https://blog.momoyu.app",
+      "description": "摸摸鱼计时器开发日志",
+      "author": {
+        "@type": "Person",
+        "name": "JJ Ying"
+      }
+      }
+      </script>
 	</body>
 </html>
 
