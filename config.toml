@@ -1,6 +1,6 @@
 baseURL = "https://blog.momoyu.app"
 languageCode = "zh-cn"
-title = "摸摸鱼研究局"
+title = "摸摸鱼研究局 | macOS 工具软件摸摸鱼计时器的开发日志"
 
 # 构建配置
 buildDrafts = false
