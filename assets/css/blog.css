@@ -78,7 +78,7 @@ ol {
   text-rendering: optimizeLegibility;
   /* text-wrap: pretty; */
   color: var(--text1);
-  font-family: "Alibaba Health 2.0", yuanti sc, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: snpro, "Alibaba Health 2.0", yuanti sc, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -1517,4 +1517,22 @@ body.lightbox-open {
   src: url('https://s.anyway.red/momoyu/momoyu-title.woff2') format('woff2');
   font-display: block;
   font-weight: 400;  
+}
+@font-face {
+  font-family: 'snpro';
+  src: url('https://s.anyway.red/momoyu/snpro-semibold.woff2') format('woff2');
+  font-display: auto;
+  font-weight: 700;  
+}
+@font-face {
+  font-family: 'snpro';
+  src: url('https://s.anyway.red/momoyu/snpro-light.woff2') format('woff2');
+  font-display: auto;
+  font-weight: 400;  
+}
+@font-face {
+  font-family: 'snpro';
+  src: url('https://s.anyway.red/momoyu/snpro-extrabold.woff2') format('woff2');
+  font-display: auto;
+  font-weight: 900;  
 }
