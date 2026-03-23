@@ -22,8 +22,11 @@ enableRobotsTXT = true
 
 # 文章配置
 [params]
-  author = "MoMoYu"
+  author = "JJ Ying"
   description = "研究对象包括左移 1px 的必要性、删掉这段代码会不会爆炸、以及开发者 JJ 在反复试错中的创作轨迹"
+
+[sitemap]
+	filename = "sitemap.xml"
 
 # 分类和标签
 [taxonomies]
@@ -57,4 +60,3 @@ enableRobotsTXT = true
 # 永久链接
 [permalinks]
   posts = "/posts/:slug/"
-
