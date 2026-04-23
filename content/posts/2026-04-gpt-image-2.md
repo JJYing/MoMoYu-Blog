@@ -1,6 +1,6 @@
 ---
 title: "我 又 拖 更 啦 ！"
-description: "国庆节回来一定发布 2.0（吧）"
+description: "劳动节回来一定发布 2.0（吧）"
 date: 2026-04-22
 author: "JJ Ying"
 tags:
