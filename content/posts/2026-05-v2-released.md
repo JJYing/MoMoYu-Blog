@@ -1,12 +1,12 @@
 ---
 title: "摸摸鱼 2.0：从兴奋，到怀疑，再到发布"
 description: "记一次迟到了半年的 release"
-date: 2026-04-22
+date: 2026-05-13
 author: "JJ Ying"
 tags:
-  - 拖更
+  - 更新日志
 slug: "v2-released"
-post-icon: "clock"
+post-icon: "hands-clapping"
 ---
 > **摸摸鱼 2.0 终于来了**
 
