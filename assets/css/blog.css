@@ -522,10 +522,24 @@ img.nav-bg-2{
 
 .article-content blockquote {
   border-radius: .5em;
-  padding: .1em .5em .1em 1em;
+  padding: .1em 1em .1em 1em;
   color: var(--text1);
   margin: 1.5em 0;
   background: var(--bg1);
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: "“";
+    position: absolute;
+    left: -0.1em;
+    top: -0.35em;
+    font-size: 7em;
+    color: var(--secondary);
+    color: hsl(var(--secondary-H), var(--secondary-S), 92%);
+    color: var(--bg3);
+    /* opacity: .2; */
+  }
 }
 
 .article-content pre {
